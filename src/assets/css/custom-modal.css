@@ -1,0 +1,10 @@
+.custom-overlay {
+    background: rgba(33, 33, 33, 0.88) !important;
+}
+
+.custom-modal {
+    padding-top: 50px !important;
+    background: #fff !important;
+    max-width: 600px !important;
+    width: 100%;
+}
