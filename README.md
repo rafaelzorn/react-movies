@@ -2,7 +2,7 @@
 
 Pesquise sobre filmes para ler informções adicionais sobre eles.
 
-### Installing
+### Instalando
 
 Primeiro você tem que usar o seu Terminal para chegar ao diretório que você deseja armazenar o projeto. Então você roda:
 
@@ -37,5 +37,5 @@ npm start
 * [React](https://reactjs.org/)
 * [Redux](https://redux.js.org)
 * [Redux Thunk](https://github.com/gaearon/redux-thunk)
-* [Axios]https://github.com/axios/axios)
+* [Axios](https://github.com/axios/axios)
 * [The MovieDB API](https://www.themoviedb.org/documentation/api)
