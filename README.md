@@ -1,10 +1,10 @@
 # React Movies
 
-Pesquise sobre filmes para ler informções adicionais sobre eles.
+Pesquise sobre filmes para ler informações adicionais sobre eles.
 
 ### Instalando
 
-Primeiro você tem que usar o seu Terminal para chegar ao diretório que você deseja armazenar o projeto. Então você roda:
+Primeiro você tem que usar o seu Terminal para chegar ao diretório que você deseja armazenar o projeto. Então você executa:
 
 ```
 git clone https://github.com/rafaelzorn/react-movies.git
