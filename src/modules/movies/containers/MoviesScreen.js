@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NoMoviesFound } from '../../../global/components'
 import CardMovie from '../components/CardMovie';
 import ModalMovieDetails from '../components/ModalMovieDetails';
 import { connect } from 'react-redux';
@@ -23,9 +24,9 @@ export class MoviesScreen extends Component {
         return (
             <div className="container">
                 <div className="row">  
-                    {this.state.movies.map(movie => <CardMovie key={movie.id} movie={movie} />)}
+                    {this.state.movies.length > 0 ? this.state.movies.map(movie => <CardMovie key={movie.id} movie={movie} />) : <NoMoviesFound />}
                     
-                    <ModalMovieDetails />
+                    <ModalMovieDetails details={this.props.details} />
                 </div>
             </div>
         );
@@ -34,7 +35,8 @@ export class MoviesScreen extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        movies: state.movies.list
+        movies: state.movies.list,
+        details: state.movies.details
     };
 };
 

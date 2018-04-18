@@ -1,12 +1,12 @@
-import { getAllMovies } from '../../services/api/Movies';
-import { FETCH_ALL_MOVIES } from '../types';
+import { getMovies, getMovieDetails } from '../../services/api/Movies';
+import { FETCH_MOVIES, FETCH_MOVIE_DETAILS } from '../types';
 
-export function fetchAllMovies(filter) {
+export function fetchMovies(filter) {
     return async (dispatch) => {
-        const movies = await getAllMovies(filter);
+        const movies = await getMovies(filter);
 
         const action = {
-            type: FETCH_ALL_MOVIES,
+            type: FETCH_MOVIES,
             payload: movies.data.results
         };
 
@@ -14,3 +14,15 @@ export function fetchAllMovies(filter) {
     };
 }
 
+export function fetchMovieDetails(id) {
+    return async (dispatch) => {
+        const details = await getMovieDetails(id);
+
+        const action = {
+            type: FETCH_MOVIE_DETAILS,
+            payload: details.data
+        };
+
+        dispatch(action);
+    };
+}

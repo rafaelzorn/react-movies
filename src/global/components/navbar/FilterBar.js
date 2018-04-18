@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchAllMovies } from '../../../redux/actions';
+import { fetchMovies } from '../../../redux/actions';
 
 export class FilterBar extends Component {
     filter(event) {           
-        const search = event.target.search.value;
-        this.props.fetchAllMovies(search);
-
+        this.props.fetchMovies(event.target.search.value);
         event.preventDefault();
     }
 
@@ -24,4 +22,4 @@ const mapStateToProps = (state) => {
     return {};
 };
 
-export default connect(mapStateToProps, {fetchAllMovies})(FilterBar);
+export default connect(mapStateToProps, {fetchMovies})(FilterBar);

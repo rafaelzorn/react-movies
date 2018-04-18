@@ -30,7 +30,7 @@ npm start
 
 ## Screenshots
 
-![Screenshot 1](https://image.ibb.co/cS9A2S/image.png)
+![Screenshot 1](https://image.ibb.co/nLrAnS/screen.png)
 
 ## Construído com
 

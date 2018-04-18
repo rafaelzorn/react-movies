@@ -7,4 +7,6 @@
     background: #fff !important;
     max-width: 600px !important;
     width: 100%;
+    border: 1px solid #716f6f !important;
+    box-shadow: 0px 0px 35px #6d6d6d !important;
 }
