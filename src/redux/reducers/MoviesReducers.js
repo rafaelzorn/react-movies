@@ -7,7 +7,7 @@ export const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case FETCH_ALL_MOVIES:
-            return { list: action.payload };
+            return { ...state, list: action.payload };
         default:
             return state;
     }

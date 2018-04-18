@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import CardMovie from '../components/CardMovie';
 import ModalMovieDetails from '../components/ModalMovieDetails';
 import { connect } from 'react-redux';
-import { fetchAllMovies } from '../../../redux/actions';
 
 export class MoviesScreen extends Component {
     constructor(props) {
@@ -12,12 +11,8 @@ export class MoviesScreen extends Component {
 		};
     }
 
-    componentDidMount() {
-        this.props.fetchMovies();   
-    }
-
     componentWillReceiveProps(nextProps) {
-        if (nextProps.movies.length !== this.props.movies.length) {
+        if (nextProps.movies.length > 0 ) {
             this.setState({
 				movies: nextProps.movies
 			});
@@ -28,9 +23,7 @@ export class MoviesScreen extends Component {
         return (
             <div className="container">
                 <div className="row">  
-                    {this.state.movies.map(movie =>
-                        <CardMovie key={movie.id} movie={movie} />
-                    )}
+                    {this.state.movies.map(movie => <CardMovie key={movie.id} movie={movie} />)}
                     
                     <ModalMovieDetails />
                 </div>
@@ -45,10 +38,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        fetchMovies: () => dispatch(fetchAllMovies())
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(MoviesScreen);
+export default connect(mapStateToProps, {})(MoviesScreen);

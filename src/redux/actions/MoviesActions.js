@@ -1,9 +1,9 @@
 import { getAllMovies } from '../../services/api/Movies';
 import { FETCH_ALL_MOVIES } from '../types';
 
-export function fetchAllMovies() {
+export function fetchAllMovies(filter) {
     return async (dispatch) => {
-        const movies = await getAllMovies('batman');
+        const movies = await getAllMovies(filter);
 
         const action = {
             type: FETCH_ALL_MOVIES,
