@@ -13,9 +13,14 @@ const styles = {
 export class CardMovie extends Component {
     modal(id) {        
         this.props.fetchMovieDetails(id)
-        this.props.openModal(true);
     }
     
+    componentWillReceiveProps(nextProps) {   
+        if (Object.keys(nextProps.details).length > 0) {
+            this.props.openModal(true);
+        }
+    }
+
     render() {        
         const data = formatMovieData(this.props.movie);
 
@@ -38,7 +43,9 @@ export class CardMovie extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return {};
+    return {
+        details: state.movies.details
+    };
 };
 
 export default connect(mapStateToProps, {fetchMovieDetails, openModal})(CardMovie);
