@@ -3,29 +3,27 @@ import Modal from 'react-responsive-modal';
 import '../../../assets/css/custom-modal.css';
 import styles from './styles/ModalMovieDetails';
 import { formatMovieData } from '../utils/Movies';
+import { connect } from 'react-redux';
+import { openModal } from '../../../redux/actions';
 
-export default class ModalMovieDetails extends Component {
+export class ModalMovieDetails extends Component {
     constructor (props) {
         super(props)
         this.state = {
-            data: {},
-            open: false
+            data: {}
         }
     }
 
-    componentWillReceiveProps(nextProps) {        
+    componentWillReceiveProps(nextProps) {              
         if (Object.keys(nextProps.details).length > 0) {
             this.setState({
-                data: formatMovieData(nextProps.details),
-                open: true
+                data: formatMovieData(nextProps.details)
             });
         }
     }
 
     onCloseModal = () => {
-        this.setState({
-            open: false
-        });
+        this.props.openModal(false);
     };
 
     render() {
@@ -33,7 +31,7 @@ export default class ModalMovieDetails extends Component {
 
         return (
             <div>
-                <Modal open={this.state.open} onClose={this.onCloseModal} classNames={{ overlay: 'custom-overlay', modal: 'custom-modal' }}>
+                <Modal open={this.props.open} onClose={this.onCloseModal} classNames={{ overlay: 'custom-overlay', modal: 'custom-modal' }}>
                     <img src={data.poster_path} alt="Imagem" style={styles.image} />
 
                     <h2 style={ styles.title }>{data.original_title}</h2>
@@ -58,3 +56,12 @@ export default class ModalMovieDetails extends Component {
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        open: state.movies.modal,
+        details: state.movies.details
+    };
+};
+
+export default connect(mapStateToProps, {openModal})(ModalMovieDetails);

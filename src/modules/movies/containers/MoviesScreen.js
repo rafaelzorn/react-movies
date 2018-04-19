@@ -26,7 +26,7 @@ export class MoviesScreen extends Component {
                 <div className="row">  
                     {this.state.movies.length > 0 ? this.state.movies.map(movie => <CardMovie key={movie.id} movie={movie} />) : <NoMoviesFound />}
                     
-                    <ModalMovieDetails details={this.props.details} />
+                    <ModalMovieDetails />
                 </div>
             </div>
         );
@@ -35,8 +35,7 @@ export class MoviesScreen extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        movies: state.movies.list,
-        details: state.movies.details
+        movies: state.movies.list        
     };
 };
 

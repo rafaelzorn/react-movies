@@ -1,5 +1,5 @@
 import { getMovies, getMovieDetails } from '../../services/api/Movies';
-import { FETCH_MOVIES, FETCH_MOVIE_DETAILS } from '../types';
+import { FETCH_MOVIES, FETCH_MOVIE_DETAILS, OPEN_MODAL } from '../types';
 
 export function fetchMovies(filter) {
     return async (dispatch) => {
@@ -25,4 +25,11 @@ export function fetchMovieDetails(id) {
 
         dispatch(action);
     };
+}
+
+export const openModal = open => {
+    return ({
+        type: OPEN_MODAL,
+        payload: open
+    })
 }

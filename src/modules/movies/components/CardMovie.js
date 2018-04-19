@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { formatMovieData } from '../utils/Movies';
 import { connect } from 'react-redux';
-import { fetchMovieDetails } from '../../../redux/actions';
+import { fetchMovieDetails, openModal } from '../../../redux/actions';
 
 const styles = {
     card: {
@@ -11,8 +11,9 @@ const styles = {
 }
 
 export class CardMovie extends Component {
-    modal(id) {
+    modal(id) {        
         this.props.fetchMovieDetails(id)
+        this.props.openModal(true);
     }
     
     render() {        
@@ -40,4 +41,4 @@ const mapStateToProps = (state) => {
     return {};
 };
 
-export default connect(mapStateToProps, {fetchMovieDetails})(CardMovie);
+export default connect(mapStateToProps, {fetchMovieDetails, openModal})(CardMovie);
