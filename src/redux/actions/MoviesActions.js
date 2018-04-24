@@ -27,9 +27,7 @@ export const fetchMovieDetails = id => {
     };
 }
 
-export const openModal = open => {
-    return ({
-        type: OPEN_MODAL,
-        payload: open
-    })
-}
+export const openModal = open => ({
+    type: OPEN_MODAL,
+    payload: open
+});

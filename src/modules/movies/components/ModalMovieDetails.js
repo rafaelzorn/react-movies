@@ -22,7 +22,7 @@ class ModalMovieDetails extends Component {
         }
     }
 
-    onCloseModal = () => {
+    _onCloseModal = () => {
         this.props.openModal(false);
     };
 
@@ -31,7 +31,7 @@ class ModalMovieDetails extends Component {
 
         return (
             <div>
-                <Modal open={this.props.open} onClose={this.onCloseModal} classNames={{ overlay: 'custom-overlay', modal: 'custom-modal' }}>
+                <Modal open={this.props.open} onClose={this._onCloseModal} classNames={{ overlay: 'custom-overlay', modal: 'custom-modal' }}>
                     <img src={data.poster_path} alt="Imagem" style={styles.image} />
 
                     <h2 style={ styles.title }>{data.original_title}</h2>

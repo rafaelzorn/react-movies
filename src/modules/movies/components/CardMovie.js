@@ -11,7 +11,7 @@ const styles = {
 }
 
 class CardMovie extends Component {
-    _modal(id) {        
+    _modal = id => {        
         this.props.fetchMovieDetails(id)
     }
     
