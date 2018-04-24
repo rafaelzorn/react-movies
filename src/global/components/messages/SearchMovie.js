@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const searchMovie = () => (
     <div className="col-12">
@@ -8,4 +8,4 @@ const searchMovie = () => (
     </div>
 )
 
-export default searchMovie;
+export default searchMovie

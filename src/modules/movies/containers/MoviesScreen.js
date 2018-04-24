@@ -1,22 +1,23 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { SearchMovie } from '../../../global/components'
-import CardMovie from '../components/CardMovie';
-import ModalMovieDetails from '../components/ModalMovieDetails';
-import { connect } from 'react-redux';
+import CardMovie from '../components/CardMovie'
+import ModalMovieDetails from '../components/ModalMovieDetails'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 class MoviesScreen extends Component {
     constructor(props) {
-        super(props);    		
-		this.state = {
-			movies: []
-		};
+        super(props)  		
+        this.state = {
+            movies: []
+        }
     }
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.movies.length > 0 ) {
             this.setState({
-				movies: nextProps.movies
-			});
+                movies: nextProps.movies
+            })
         }
     }
 
@@ -29,14 +30,18 @@ class MoviesScreen extends Component {
                     <ModalMovieDetails />
                 </div>
             </div>
-        );
+        )
     }
+}
+
+MoviesScreen.propTypes = {
+    movies: PropTypes.array
 }
 
 const mapStateToProps = state => {
     return {
         movies: state.movies.list        
-    };
-};
+    }
+}
 
-export default connect(mapStateToProps, {})(MoviesScreen);
+export default connect(mapStateToProps, {})(MoviesScreen)

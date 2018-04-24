@@ -1,6 +1,6 @@
-import React from 'react';
-import FilterBar from './FilterBar';
-import styles from './styles/NavBar';
+import React from 'react'
+import FilterBar from './FilterBar'
+import styles from './styles/NavBar'
 
 const NavBar = () => (
     <nav className="navbar navbar-light bg-light" style={styles.navbar}>
@@ -8,6 +8,6 @@ const NavBar = () => (
 
         <FilterBar />
     </nav>
-);
+)
 
-export default NavBar;
+export default NavBar

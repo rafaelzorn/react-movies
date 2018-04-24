@@ -1,7 +1,7 @@
-import React from 'react';
-import { Provider } from 'react-redux';
-import Redux from './configuration/Redux';
-import Main from './Main';
+import React from 'react'
+import { Provider } from 'react-redux'
+import Redux from './configuration/Redux'
+import Main from './Main'
 
 const App = () => (
     <Provider store={Redux.createStore()}>
@@ -9,4 +9,4 @@ const App = () => (
     </Provider>
 )
 
-export default App;
+export default App

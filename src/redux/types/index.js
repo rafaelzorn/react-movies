@@ -1,1 +1,1 @@
-export * from './MoviesTypes';
+export * from './MoviesTypes'

@@ -1,12 +1,12 @@
-import { applyMiddleware, createStore as create } from 'redux';
-import thunk from 'redux-thunk';
-import { rootReducer } from '../redux/reducers';
+import { applyMiddleware, createStore as create } from 'redux'
+import thunk from 'redux-thunk'
+import { rootReducer } from '../redux/reducers'
 
-const initialState = {};
+const initialState = {}
 
 export default {
     createStore: () => {
-        const store = create(rootReducer, initialState, applyMiddleware(thunk));
-        return store;
+        const store = create(rootReducer, initialState, applyMiddleware(thunk))
+        return store
     }
-};
+}

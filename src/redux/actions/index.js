@@ -1,1 +1,1 @@
-export * from './MoviesActions';
+export * from './MoviesActions'

@@ -3,6 +3,6 @@ const styles = {
         backgroundColor: '#000',
         marginBottom: 20
     }
-};
+}
 
-export default styles;
+export default styles

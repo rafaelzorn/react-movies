@@ -1,6 +1,6 @@
-import React from 'react';
-import { NavBar } from './global/components';
-import MoviesScreen from './modules/movies/containers/MoviesScreen';
+import React from 'react'
+import { NavBar } from './global/components'
+import MoviesScreen from './modules/movies/containers/MoviesScreen'
 
 const Main = () => (
     <div>
@@ -9,4 +9,4 @@ const Main = () => (
     </div>
 )
 
-export default Main;
+export default Main

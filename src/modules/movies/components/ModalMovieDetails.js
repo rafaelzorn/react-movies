@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
-import Modal from 'react-responsive-modal';
-import '../../../assets/css/custom-modal.css';
-import styles from './styles/ModalMovieDetails';
-import { formatMovieData } from '../utils/Movies';
-import { connect } from 'react-redux';
-import { openModal } from '../../../redux/actions';
+import React, { Component } from 'react'
+import Modal from 'react-responsive-modal'
+import '../../../assets/css/custom-modal.css'
+import styles from './styles/ModalMovieDetails'
+import { formatMovieData } from '../utils/Movies'
+import { connect } from 'react-redux'
+import { openModal } from '../../../redux/actions'
+import PropTypes from 'prop-types'
 
 class ModalMovieDetails extends Component {
     constructor (props) {
@@ -18,16 +19,16 @@ class ModalMovieDetails extends Component {
         if (Object.keys(nextProps.details).length > 0) {
             this.setState({
                 data: formatMovieData(nextProps.details)
-            });
+            })
         }
     }
 
     _onCloseModal = () => {
-        this.props.openModal(false);
+        this.props.openModal(false)
     };
 
     render() {
-        const data = this.state.data;
+        const data = this.state.data
 
         return (
             <div>
@@ -53,15 +54,21 @@ class ModalMovieDetails extends Component {
                     </dl>
                 </Modal>
             </div>
-        );
+        )
     }
+}
+
+ModalMovieDetails.propTypes = {
+    details: PropTypes.object,
+    openModal: PropTypes.func,
+    open: PropTypes.bool
 }
 
 const mapStateToProps = state => {
     return {
         open: state.movies.modal,
         details: state.movies.details
-    };
-};
+    }
+}
 
-export default connect(mapStateToProps, {openModal})(ModalMovieDetails);
+export default connect(mapStateToProps, {openModal})(ModalMovieDetails)
