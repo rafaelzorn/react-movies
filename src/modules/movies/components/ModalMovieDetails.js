@@ -50,7 +50,7 @@ class ModalMovieDetails extends Component {
                         <dd className="col-sm-9">{data.popularity} ({data.votes} Votes)</dd>
 
                         <dt className="col-sm-3">Website</dt>
-                        <dd className="col-sm-9">{data.website}</dd>
+                        <dd className="col-sm-9"><a target="_blank" href={data.website}>{data.website}</a></dd>
                     </dl>
                 </Modal>
             </div>
