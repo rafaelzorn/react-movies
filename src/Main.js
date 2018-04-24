@@ -1,14 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { NavBar } from './global/components';
 import MoviesScreen from './modules/movies/containers/MoviesScreen';
 
-export default class App extends Component {
-    render() {
-        return (
-            <div>
-                <NavBar />
-                <MoviesScreen />
-            </div>
-        );
-    }
-}
+const Main = () => (
+    <div>
+        <NavBar />
+        <MoviesScreen />
+    </div>
+)
+
+export default Main;

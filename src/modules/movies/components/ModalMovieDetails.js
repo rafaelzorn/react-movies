@@ -6,7 +6,7 @@ import { formatMovieData } from '../utils/Movies';
 import { connect } from 'react-redux';
 import { openModal } from '../../../redux/actions';
 
-export class ModalMovieDetails extends Component {
+class ModalMovieDetails extends Component {
     constructor (props) {
         super(props)
         this.state = {
@@ -57,7 +57,7 @@ export class ModalMovieDetails extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
     return {
         open: state.movies.modal,
         details: state.movies.details

@@ -10,8 +10,8 @@ const styles = {
     }
 }
 
-export class CardMovie extends Component {
-    modal(id) {        
+class CardMovie extends Component {
+    _modal(id) {        
         this.props.fetchMovieDetails(id)
     }
     
@@ -32,7 +32,7 @@ export class CardMovie extends Component {
                         <h5 className="card-title">{data.original_title}</h5>
                         <p className="card-text">{data.overview}</p>
                         
-                        <button type="button" className="btn btn-primary" onClick={this.modal.bind(this, data.id)}>
+                        <button type="button" className="btn btn-primary" onClick={this._modal.bind(this, data.id)}>
                             See more
                         </button>
                     </div>
@@ -42,7 +42,7 @@ export class CardMovie extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
     return {
         details: state.movies.details
     };

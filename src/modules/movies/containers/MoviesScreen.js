@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { NoMoviesFound } from '../../../global/components'
+import { SearchMovie } from '../../../global/components'
 import CardMovie from '../components/CardMovie';
 import ModalMovieDetails from '../components/ModalMovieDetails';
 import { connect } from 'react-redux';
 
-export class MoviesScreen extends Component {
+class MoviesScreen extends Component {
     constructor(props) {
         super(props);    		
 		this.state = {
@@ -24,7 +24,7 @@ export class MoviesScreen extends Component {
         return (
             <div className="container">
                 <div className="row">  
-                    {this.state.movies.length > 0 ? this.state.movies.map(movie => <CardMovie key={movie.id} movie={movie} />) : <NoMoviesFound />}
+                    {this.state.movies.length > 0 ? this.state.movies.map(movie => <CardMovie key={movie.id} movie={movie} />) : <SearchMovie />}
                     
                     <ModalMovieDetails />
                 </div>
@@ -33,7 +33,7 @@ export class MoviesScreen extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
     return {
         movies: state.movies.list        
     };

@@ -1,7 +1,7 @@
 import { getMovies, getMovieDetails } from '../../services/api/Movies';
 import { FETCH_MOVIES, FETCH_MOVIE_DETAILS, OPEN_MODAL } from '../types';
 
-export function fetchMovies(filter) {
+export const fetchMovies = filter => {
     return async (dispatch) => {
         const movies = await getMovies(filter);
 
@@ -14,7 +14,7 @@ export function fetchMovies(filter) {
     };
 }
 
-export function fetchMovieDetails(id) {
+export const fetchMovieDetails = id => {
     return async (dispatch) => {
         const details = await getMovieDetails(id);
 
