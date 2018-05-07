@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchMovies } from '../../../redux/actions'
+import { search } from '../../../redux/actions'
 import PropTypes from 'prop-types'
 
 class FilterBar extends Component {
 
-    _filter(event) {           
-        this.props.fetchMovies(event.target.search.value)
+    _filter(event) {                   
+        this.props.search(event.target.search.value)        
         event.preventDefault()
     }
 
@@ -21,7 +21,7 @@ class FilterBar extends Component {
 }
 
 FilterBar.propTypes = {
-    fetchMovies: PropTypes.func
+    search: PropTypes.func
 }
 
-export default connect(null, {fetchMovies})(FilterBar)
+export default connect(null, {search})(FilterBar)

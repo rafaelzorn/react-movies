@@ -4,7 +4,7 @@ export const INITIAL_STATE = {
     list: [],
     details: {},
     modal: false,
-    search: false
+    search: ''
 }
 
 export default (state = INITIAL_STATE, action) => {

@@ -1,23 +1,20 @@
 import { getMovies, getMovieDetails } from '../../services/api/Movies'
 import { FETCH_MOVIES, FETCH_MOVIE_DETAILS, OPEN_MODAL, SEARCH } from '../types'
 
-export const fetchMovies = text => {
+export const fetchMovies = (term, page) => {
     return async (dispatch) => {
-        if (text === '') {
-            _search(false, dispatch)
+        if (term === '') {
             return false
         }
 
-        const movies = await getMovies(text)
+        const movies = await getMovies(term, page)
 
         const action = {
             type: FETCH_MOVIES,
             payload: movies.data.results
         }
-
+        
         dispatch(action)
-
-        _search(true, dispatch)
     }
 }
 
@@ -39,9 +36,8 @@ export const openModal = open => ({
     payload: open
 })
 
-const _search = (search, dispatch) => (
-    dispatch ({
-        type: SEARCH,
-        payload: search
-    })
-)
+export const search = term => ({
+    type: SEARCH,
+    payload: term
+})
+
