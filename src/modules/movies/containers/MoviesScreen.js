@@ -12,8 +12,7 @@ class MoviesScreen extends Component {
         super(props)
         this.state = {
             movies: [],
-            currentPage: 1,
-            hasMore: true
+            currentPage: 1
         }
     }
 
@@ -22,19 +21,13 @@ class MoviesScreen extends Component {
             this.setState({               
                 movies: [ ...this.state.movies, ...nextProps.movies ],
                 currentPage: this.state.currentPage + 1,
-                hasMore: true
-            })
-        } else if (nextProps.movies.length === 0) {
-            this.setState({                           
-                hasMore: false
             })
         }
         
         if (nextProps.search !== this.props.search) {
             this.setState({
                 movies: [],
-                currentPage: 1,
-                hasMore: true
+                currentPage: 1
             })
         }
     }
@@ -53,7 +46,7 @@ class MoviesScreen extends Component {
                 className="row"
                 pageStart={1}
                 loadMore={this.moreMovies.bind(this)}
-                hasMore={this.state.hasMore}
+                hasMore={this.props.hasMore}
                 loader={<Info className="row" key={0} message="Loading..." />}
             >
                 {this.state.movies.map((movie, i) => <CardMovie key={i} movie={movie} />)}
@@ -75,13 +68,15 @@ class MoviesScreen extends Component {
 MoviesScreen.propTypes = {
     movies: PropTypes.array,
     search: PropTypes.string,
-    fetchMovies: PropTypes.func
+    fetchMovies: PropTypes.func,
+    hasMore: PropTypes.bool
 }
 
 const mapStateToProps = state => {
     return {
         movies: state.movies.list,
-        search: state.movies.search
+        search: state.movies.search,
+        hasMore: state.movies.hasMore
     }
 }
 
