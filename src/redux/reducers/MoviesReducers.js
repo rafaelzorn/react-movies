@@ -5,19 +5,20 @@ export const INITIAL_STATE = {
     details: {},
     modal: false,
     search: '',
-    hasMore: true
+    hasMore: true,
+    currentPage: 0
 }
 
 export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case FETCH_MOVIES:
-            return { ...state, list: action.payload }
+            return { ...state, list: [...state.list, ...action.payload], currentPage: state.currentPage + 1 }
         case FETCH_MOVIE_DETAILS:
             return { ...state, details: action.payload }
         case OPEN_MODAL:
             return { ...state, modal: action.payload }
         case SEARCH:
-            return { ...state, search: action.payload, hasMore: true, list: [] }
+            return { ...state, search: action.payload, hasMore: true, list: [], currentPage: 1 }
         case HAS_MORE:
             return { ...state, hasMore: action.payload }
         default:

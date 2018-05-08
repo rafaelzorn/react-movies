@@ -15,7 +15,7 @@ class ModalMovieDetails extends Component {
         }
     }
 
-    componentWillReceiveProps(nextProps) {              
+    componentWillReceiveProps = nextProps => {              
         if (Object.keys(nextProps.details).length > 0) {
             this.setState({
                 data: formatMovieData(nextProps.details)
@@ -23,7 +23,7 @@ class ModalMovieDetails extends Component {
         }
     }
 
-    _onCloseModal = () => {
+    onCloseModal = () => {
         this.props.openModal(false)
     };
 
@@ -32,7 +32,7 @@ class ModalMovieDetails extends Component {
 
         return (
             <div>
-                <Modal open={this.props.open} onClose={this._onCloseModal} classNames={{ overlay: 'custom-overlay', modal: 'custom-modal' }}>
+                <Modal open={this.props.open} onClose={this.onCloseModal} classNames={{ overlay: 'custom-overlay', modal: 'custom-modal' }}>
                     <img src={data.poster_path} alt="Imagem" style={styles.image} />
 
                     <h2 style={ styles.title }>{data.original_title}</h2>

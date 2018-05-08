@@ -2,21 +2,15 @@ import React, { Component } from 'react'
 import { formatMovieData } from '../utils/Movies'
 import { connect } from 'react-redux'
 import { fetchMovieDetails, openModal } from '../../../redux/actions'
+import styles from './styles/CardMovie'
 import PropTypes from 'prop-types'
 
-const styles = {
-    card: {
-        marginBottom: 10,
-        boxShadow: '0px 0px 15px #909090'
-    }
-}
-
 class CardMovie extends Component {
-    _modal = id => {        
+    modal = id => {        
         this.props.fetchMovieDetails(id)
     }
     
-    componentWillReceiveProps(nextProps) {   
+    componentWillReceiveProps = nextProps => {   
         if (Object.keys(nextProps.details).length > 0) {
             this.props.openModal(true)
         }
@@ -33,7 +27,7 @@ class CardMovie extends Component {
                         <h5 className="card-title">{data.original_title}</h5>
                         <p className="card-text">{data.overview}</p>
                         
-                        <button type="button" className="btn btn-primary" onClick={this._modal.bind(this, data.id)}>
+                        <button type="button" className="btn btn-primary" onClick={this.modal.bind(this, data.id)}>
                             See more
                         </button>
                     </div>
