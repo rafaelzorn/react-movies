@@ -43,3 +43,7 @@ npm start
 * [Redux Thunk](https://github.com/gaearon/redux-thunk)
 * [Axios](https://github.com/axios/axios)
 * [The MovieDB API](https://www.themoviedb.org/documentation/api)
+
+## Observações
+
+O projeto foi feito com Redux para fins de aprendizado, porém não teria necessidade de usar para esse projeto de pequeno porte.
