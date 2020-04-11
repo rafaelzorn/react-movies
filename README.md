@@ -10,7 +10,7 @@ Search for movies to read additional information about them.
 
 ## Preview
 
-![preview-1](./preview-1.jpg)
+![preview-1](./preview-1.png)
 
 ## APIs
 
