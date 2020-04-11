@@ -1,49 +1,32 @@
-# React Movies
+<p align="center">
+  <h3 align="center">React Movies</h3>
+</p>
 
-Pesquise sobre filmes para ler informações adicionais sobre eles.
+---
 
-### Instalando
+## Overview
 
-Primeiro você tem que usar o seu Terminal para chegar ao diretório que você deseja armazenar o projeto. Então você executa:
+Search for movies to read additional information about them.
 
-```
-git clone https://github.com/rafaelzorn/react-movies.git
-```
+## Preview
 
-Acesse o diretório criado e você estará no diretório-raiz do projeto:
+![preview-1](./preview-1.jpg)
 
-```
-cd react-movies
-```
+## APIs
 
-Instalar as dependências do projeto:
+- [The MovieDB API](https://www.themoviedb.org/documentation/api)
 
-```
-npm install
-````
+## Running the project
 
-### .ENV
+- Clone this repository
+- Install all dependencies using the command `yarn`
+- Run `yarn start`
+- Access `http://localhost:3000/`
 
-Crie sua conta no The MovieDB para adquirir sua API KEY. A API KEY deve ser adicionada no .env que ainda não existe. Basta duplicar o .env.example, renomeando para .env e adicionar a chave.
+## Used technologies
 
-Por fim, execute o servidor de desenvolvimento e o aplicativo deve estar disponível na seguinte URL: http://localhost:3000
-
-```
-npm start
-```
-
-## Screenshots
-
-![Screenshot 1](https://image.ibb.co/nLrAnS/screen.png)
-
-## Construído com
-
-* [React](https://reactjs.org/)
-* [Redux](https://redux.js.org)
-* [Redux Thunk](https://github.com/gaearon/redux-thunk)
-* [Axios](https://github.com/axios/axios)
-* [The MovieDB API](https://www.themoviedb.org/documentation/api)
-
-## Observações
-
-O projeto foi feito com Redux para fins de aprendizado, porém não teria necessidade de usar para esse projeto de pequeno porte.
+- React
+- Redux
+- Redux Thunk
+- React Router DOM
+- Other React JS libs
